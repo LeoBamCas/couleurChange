@@ -1,0 +1,37 @@
+header{
+    background-color: beige;
+    border: do;
+    display: flex;
+    justify-content: space-around;
+}
+#mainDraw{
+    background-color: beige;
+    height: fit-content;
+    margin: 5vh 20vw;
+}
+.colorSpan{
+    display: block;
+    width: 5vw;
+    height: 5vh;
+    border: solid black;
+}
+.colorSpan:hover{
+    border: solid white;
+    transform: scale(1.5);
+   
+}
+.colorPick{
+    display: flex;
+    flex-direction: column;
+}
+.colorDiv{
+    display: flex;
+}
+.whiteBorder{
+    border: solid white;
+}
+.toColor{
+    display: block;
+    width: 5vw;
+    height: 5vh;
+}
