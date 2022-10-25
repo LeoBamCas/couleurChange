@@ -4,6 +4,7 @@ let colors1 = document.querySelector("#colors1");
 let colors2 = document.querySelector("#colors2");
 const pickedColor = document.querySelector('#pickedColor');
 const colorSpans = document.querySelectorAll('.colorSpan');
+const dl = document.querySelector('#dl');
 let tableauCouleurTemp = 0;
 let tempColor;
 let tempToColor =0;
@@ -12,12 +13,12 @@ document.onmousedown = function(){ isClicked = true; console.log(isClicked)};
 document.onmouseup = function(){ isClicked = false; console.log(isClicked) };
 
 
-function blackBorder(){
+// function blackBorder(){
 
-    colorSpans.forEach(span =>{
-        span.classList.remove('whiteBorder');
-    })
-}
+//     colorSpans.forEach(span =>{
+//         span.classList.remove('whiteBorder');
+//     })
+// }
 
 //creation fonction pour créer des tableaux
 
@@ -40,8 +41,8 @@ function createSpans(zone){
                 pickedColor.style.backgroundColor = colorSpan.style.backgroundColor;
                 tempColor = pickedColor.style.backgroundColor;
 
-                blackBorder();
-                colorSpan.classList.add('whiteBorder');
+                // blackBorder();
+                // colorSpan.classList.add('whiteBorder');
             })
         }
     }
@@ -78,3 +79,13 @@ for(i=0;i<30;i++){
         })
     }
 }
+
+dl.addEventListener('click', function(e){
+
+
+html2canvas(document.querySelector("#mainDraw")).then(canvas => {
+    document.body.appendChild(canvas)
+});
+
+
+})
