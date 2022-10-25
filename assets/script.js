@@ -7,13 +7,15 @@ const colorSpans = document.querySelectorAll('.colorSpan');
 let tableauCouleurTemp = 0;
 let tempColor;
 let tempToColor =0;
+let isClicked = false;
+document.onmousedown = function(){ isClicked = true; console.log(isClicked)};
+document.onmouseup = function(){ isClicked = false; console.log(isClicked) };
 
 
 function blackBorder(){
 
     colorSpans.forEach(span =>{
         span.classList.remove('whiteBorder');
-        console.log('lalalala')
     })
 }
 
@@ -67,6 +69,12 @@ for(i=0;i<30;i++){
         colorSpan.addEventListener('click', function(e){
             e.preventDefault();
             colorSpan.style.backgroundColor = tempColor;
+        })
+        colorSpan.addEventListener('mouseover', function(e){
+            if(isClicked === true){
+                colorSpan.style.backgroundColor = tempColor;
+                console.log('enter')
+            }
         })
     }
 }

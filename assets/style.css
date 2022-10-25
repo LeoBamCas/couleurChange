@@ -9,6 +9,12 @@ header{
     height: fit-content;
     margin: 5vh 20vw;
 }
+#titre{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .colorSpan{
     display: block;
     width: 5vw;
@@ -16,6 +22,11 @@ header{
     border: solid black;
 }
 .colorSpan:hover{
+    border: solid white;
+    transform: scale(1.5);
+   
+}
+.toColor:hover{
     border: solid white;
     transform: scale(1.5);
    
