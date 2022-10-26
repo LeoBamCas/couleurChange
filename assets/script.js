@@ -61,6 +61,9 @@ let colors1 = document.querySelector('#colors1')
 let colors2 = document.querySelector('#colors2')
 const pickedColor = document.querySelector('#pickedColor')
 const colorSpans = document.querySelectorAll('.colorSpan')
+const menu1 = document.querySelector('.menu1')
+const menu2 = document.querySelector('.menu2')
+const colorPicks = document.querySelectorAll('.colorPick')
 const dl = document.querySelector('#dl')
 let tableauCouleurTemp = 0
 let tempColor
@@ -80,7 +83,42 @@ document.onmouseup = function () {
 //     })
 // }
 
-//creation fonction pour créer des tableaux
+
+//menu déroulant pour choisir les couleurs
+
+menu1.addEventListener('click', function(e){
+  if(colors1.classList.contains('hidden')){
+    colors1.classList.remove('hidden')
+    colors1.classList.remove('disparition')
+    colors1.classList.add('apparition')
+  }else{
+    colors1.classList.remove('apparition');
+    colors1.classList.add('disparition')
+    setTimeout(() => {
+      
+      colors1.classList.add('hidden')
+    }, 800)
+  }
+})
+menu2.addEventListener('click', function(e){
+  if(colors2.classList.contains('hidden')){
+    colors2.classList.remove('hidden')
+    colors2.classList.remove('disparition')
+    colors2.classList.add('apparition')
+  }else{
+    colors2.classList.remove('apparition');
+    colors2.classList.add('disparition')
+    setTimeout(() => {
+      
+      colors2.classList.add('hidden')
+    }, 800)
+  }
+})
+
+
+
+
+//creation fonction pour créer des tableaux de couleurs à choisir
 
 function createSpans (zone) {
   for (i = 0; i < 7; i++) {
@@ -137,32 +175,31 @@ for (i = 0; i < 30; i++) {
   }
 }
 
-
 // tentatives de créer un bouton permettant le telechargement de sa création
 
 dl.addEventListener('click', function (e) {
   e.preventDefault()
 
-//   dl.download = html2canvas(document.querySelector('#mainDraw'))
-//     .then(canvas => {
-//       canvas.id = 'toDl'
-//       document.body.appendChild(canvas)
-//     })
+  //   dl.download = html2canvas(document.querySelector('#mainDraw'))
+  //     .then(canvas => {
+  //       canvas.id = 'toDl'
+  //       document.body.appendChild(canvas)
+  //     })
 
-function saveScreenshot(canvas) {
-    const fileName = "image";
-    const link = document.createElement("a");
-    link.download = fileName + ".png";
-    console.log(canvas);
+  function saveScreenshot (canvas) {
+    const fileName = 'image'
+    const link = document.createElement('a')
+    link.download = fileName + '.png'
+    console.log(canvas)
     canvas.toBlob(function (blob) {
-        console.log(blob);
-        link.href = URL.createObjectURL(blob);
-        link.click();
-    });
-}
+      console.log(blob)
+      link.href = URL.createObjectURL(blob)
+      link.click()
+    })
+  }
 
-html2canvas(document.querySelector("#mainDraw"), {
+  html2canvas(document.querySelector('#mainDraw'), {
     allowTaint: true,
     useCORS: true
-}).then(saveScreenshot);
+  }).then(saveScreenshot)
 })
