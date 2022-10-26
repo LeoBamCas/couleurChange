@@ -172,3 +172,11 @@ footer{
 
     }
 }
+
+@media screen and (max-width: 460px) {
+    #menuParent1, #menuParent2{
+        top: 7%;
+    }
+
+    
+}
