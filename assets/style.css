@@ -39,6 +39,9 @@ a{
     justify-content: center;
     align-items: center;
 }
+#titre span{
+    margin: auto;
+}
 .exempleImg{
     width: 10vw;
 }
@@ -78,4 +81,19 @@ a{
     display: block;
     width: 5vh;
     height: 5vh;
+}
+
+@media screen and (max-width: 900px) {
+    .exempleDiv{
+        display: none;
+    }
+    #mainDraw{
+        width: 100%;
+    }
+    .toColor{
+        height: 2vh;
+    }
+    h1{
+        font-size: 5vh;
+    }
 }
