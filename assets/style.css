@@ -1,19 +1,52 @@
+@font-face {
+    font-family: 'pixel';
+    src: url('../fonts/llpixel/LLPIXEL3.ttf');
+}
+
+body{
+    font-family: 'pixel';
+}
+
 header{
     background-color: beige;
     border: do;
     display: flex;
     justify-content: space-around;
 }
+main{
+    display:flex ;
+    justify-content: space-between;
+}
+h1{
+    font-size: 10vh;
+    margin: auto;
+}
+p{
+    font-size: 3vh;
+    margin: auto;
+}
+a{
+    background-color: white;
+}
 #mainDraw{
     background-color: beige;
     height: fit-content;
-    margin: 5vh 20vw;
+    max-width: fit-content;
 }
 #titre{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.exempleImg{
+    width: 10vw;
+}
+.exempleDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10vw;
 }
 .colorSpan{
     display: block;
@@ -43,6 +76,6 @@ header{
 }
 .toColor{
     display: block;
-    width: 5vw;
+    width: 5vh;
     height: 5vh;
 }
