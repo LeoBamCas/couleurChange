@@ -61,6 +61,7 @@ footer{
 }
 .exempleImg{
     width: 10vw;
+    image-rendering: pixelated;
 }
 .exempleDiv{
     display: flex;
