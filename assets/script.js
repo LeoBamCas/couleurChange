@@ -167,10 +167,19 @@ for (i = 0; i < 30; i++) {
       e.preventDefault()
       colorSpan.style.backgroundColor = tempColor
     })
+    colorSpan.addEventListener('touchstart', function (e) {
+      e.preventDefault()
+      colorSpan.style.backgroundColor = tempColor
+    })
     colorSpan.addEventListener('mouseover', function (e) {
       if (isClicked === true) {
         colorSpan.style.backgroundColor = tempColor
       }
+    })
+    colorSpan.addEventListener('touchmove', function (e) {
+      
+        colorSpan.style.backgroundColor = tempColor
+      
     })
   }
 }
